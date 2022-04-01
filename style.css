@@ -1,10 +1,26 @@
-@media screen and (max-width: 992px) {
-    .nav-text{
-        
-    }
-}
 
 /* footer */
+
+/* menu pesan */
+.table-pesanan th,
+.table-pesanan td
+{
+    color: black;
+}
+
+/* menu products */
+
+.table-products th,
+.table-products td
+{
+    color: black;
+}
+
+.form-products input{
+    background-color: white;
+}
+
+
 
 
 
