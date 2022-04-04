@@ -1,7 +1,7 @@
 <?php 
 date_default_timezone_set("Asia/makassar");
 //koneksi ke database
-$conn=mysqli_connect("localhost","root","", "db_buah");
+$conn=mysqli_connect("localhost","root","", "baju_db");
 
 if(!isset($conn)){
     echo "koneksi gagal!!!";
@@ -63,28 +63,28 @@ function upload(){
 
 function tambahproduct($data){
   global $conn;
-  $buah=$data["nama_buah"];
-  $stok=$data["stok"];
+  $baju=$data["nama_baju"];
+  $size=$data["size"];
   $harga=$data["harga"];
-  $satuan=$data["satuan"];
+  $stok=$data["stok"];
   
   $gambar = upload();
   if(!$gambar){
     return false;
   }
 
-  $query="INSERT INTO tb_product VALUES ('','$buah','$stok', '$harga', '$satuan' ,'$gambar')";
+  $query="INSERT INTO tb_produkbaju VALUES ('','$baju','$size', '$harga', '$stok' ,'$gambar')";
   mysqli_query($conn,$query);//jalankan query
   return $query;
 }
 
 function update($data){
   global $conn;
-  $id=mysqli_real_escape_string($conn, $_POST["id_buah"]);
-  $buah=mysqli_real_escape_string($conn, $data["nama_buah"]);
-  $stok=mysqli_real_escape_string($conn, $data["stok"]);
+  $id=mysqli_real_escape_string($conn, $_POST["id"]);
+  $baju=mysqli_real_escape_string($conn, $data["nama_baju"]);
+  $size=mysqli_real_escape_string($conn, $data["size"]);
   $harga=mysqli_real_escape_string($conn, $data["harga"]);
-  $satuan=mysqli_real_escape_string($conn, $data["satuan"]);
+  $stok=mysqli_real_escape_string($conn, $data["stok"]);
   $gambar_lama=mysqli_real_escape_string($conn, $data["gambar_lama"]);
   
   $gambar = upload();
@@ -97,8 +97,8 @@ function update($data){
 
     }
   }
-  $query="UPDATE tb_product SET nama_buah='$buah', stok='$stok', harga='$harga', satuan='$satuan', gambar='$gambar' 
-                            WHERE id_buah=$id ";
+  $query="UPDATE tb_product SET nama_baju='$baju', size='$size', harga='$harga', stok='$stok', gambar='$gambar' 
+                            WHERE id=$id ";
   
   mysqli_query($conn,$query) or die(mysqli_error($conn));
   return mysqli_affected_rows($conn);
@@ -107,13 +107,13 @@ function update($data){
 function hapus($id){
   global $conn;
   $id = htmlspecialchars($_GET["id"]);
-  $file=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM tb_product WHERE id_buah=$id "));
+  $file=mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM tb_produkbaju WHERE id=$id "));
   $gambar = $file["gambar"];
   
   if(file_exists("../img/$gambar")){
     unlink('../img/'.$gambar);
     
-    $query = "DELETE FROM tb_product WHERE id_buah=$id ";
+    $query = "DELETE FROM tb_produkbaju WHERE id=$id ";
     // var_dump($query);die;
     mysqli_query($conn,$query) or die(mysqli_error($conn));
     return mysqli_affected_rows($conn);
@@ -132,7 +132,7 @@ function pesan($data){
   $alamat  = htmlspecialchars( $data["alamat"] );
   $total=$jumlah*$harga;
   // var_dump($total);die;
-  $query = "INSERT INTO tb_pesanan VALUES ('', '$nama', '$alamat', '$buah', '$jumlah', '$total','$tanggal')";
+  $query = "INSERT INTO orderan VALUES ('', '$nama', '$alamat', '$buah', '$jumlah', '$total','$tanggal')";
   // var_dump($query);die;
   mysqli_query($conn, $query)or die(mysqli_error($conn));
 

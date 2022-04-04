@@ -190,20 +190,20 @@ if(isset($_POST["tambah"])){
             <div class="card-body">
             <form class="row g-3" action="" method="POST" enctype="multipart/form-data">
               <div class="col-12">
-                <label for="inputAddress" class="form-label" style="color: black;">Nama Buah</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Apple..." name="nama_buah"style="background-color: white; color: black;" >
+                <label for="inputAddress" class="form-label" style="color: black;">Nama Baju</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Apple..." name="nama_baju"style="background-color: white; color: black;" >
               </div>
               <div class="col-12">
-                <label for="inputAddress2" class="form-label" style="color: black;">Stok</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="1...." name="stok" style="background-color: white; color: black;">
+                <label for="inputAddress2" class="form-label" style="color: black;">Size</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="1...." name="size" style="background-color: white; color: black;">
               </div>
               <div class="col-12">
                 <label for="inputAddress2" class="form-label" style="color: black;">Harga</label>
                 <input type="text" class="form-control" id="inputAddress2" placeholder="15000" name="harga" style="background-color: white; color: black;">
               </div>
               <div class="col-12">
-                <label for="inputAddress2" class="form-label" style="color: black;">Satuan</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="2" name="satuan" style="background-color: white; color: black;">
+                <label for="inputAddress2" class="form-label" style="color: black;">Stok</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="2" name="stok" style="background-color: white; color: black;">
               </div>
               <div class="col-12">
                 <label for="inputAddress2" class="form-label" style="color: black;">Gambar</label>

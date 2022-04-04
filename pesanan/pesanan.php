@@ -165,15 +165,15 @@
                             <th scope="col">No</th>
                             <th scope="col">Tanggal</th>
                             <th scope="col">Nama</th>
-                            <th scope="col">Nama Pesanan</th>
-                            <th scope="col">Jumlah (Kg)</th>
+                            <th scope="col">Nama Baju</th>
+                            <th scope="col">Jumlah (lembar)</th>
                             <th scope="col">Alamat</th>
                             <th scope="col">Total Harga</th>
                         </tr>
                         </thead>
                         <tbody>
                             <?php 
-                                $data = query("SELECT * FROM tb_pesanan ORDER BY id DESC");
+                                $data = query("SELECT * FROM orderan ORDER BY id DESC");
                                 $i=1;
                             ?>
                             <?php foreach ($data as $row) : ?>
@@ -181,10 +181,11 @@
                                     <td scope="row"><?= $i++;?> </td>
                                     <td><?= $row['tanggal'];?></td>
                                     <td><?= $row['nama'];?></td>
-                                    <td><?=$row['nama_buah'];?></td>
+                                    <td><?=$row['nama_baju'];?></td>
+                                    <td><?=$row['size'];?></td>
                                     <td><?=$row['jumlah'];?></td>
                                     <td><?=$row['alamat'];?></td>
-                                    <td><?=$row['total_harga'];?></td>
+                                    <td><?=$row['total'];?></td>
                                     
                                 </tr>
                             <?php endforeach; ?>

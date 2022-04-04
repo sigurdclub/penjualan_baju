@@ -1,7 +1,7 @@
     <?php
         include_once "../function.php";
         $i=1;
-        $data=query("SELECT * FROM tb_product");
+        $data=query("SELECT * FROM tb_produkbaju");
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -167,10 +167,10 @@
                         <thead>
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Nama Buah</th>
-                            <th scope="col">Stok</th>
+                            <th scope="col">Nama Baju</th>
+                            <th scope="col">Size</th>
                             <th scope="col"> Harga</th>
-                            <th scope="col">Satuan</th>
+                            <th scope="col">Stok</th>
                             <th scope="col">Gambar</th>
                             <th scope="col">Aksi</th>
                             
@@ -182,15 +182,15 @@
 
                                 <tr>
                                     <td scope="row"><?=$i++?> </td>
-                                    <td><?=$row["nama_buah"];?></td>
-                                    <td><?=$row["stok"];?></td>
+                                    <td><?=$row["nama_baju"];?></td>
+                                    <td><?=$row["size"];?></td>
                                     <td><?=$row["harga"];?></td>
-                                    <td><?=$row["satuan"];?></td>
+                                    <td><?=$row["stok"];?></td>
                                     <td><img src="../img/<?= $row ['gambar'];?>" alt="" width="100px"></td>
                                     <td>
-                                    <a href="hapus.php?id=<?=$row["id_buah"];?>">
+                                    <a href="hapus.php?id=<?=$row["id"];?>">
                                     <button type="button" class="btn btn-danger">Delete</button></a>
-                        <a href="update.php?id=<?=$row["id_buah"];?>">
+                        <a href="update.php?id=<?=$row["id"];?>">
                         <button type="button" class="btn btn-warning" style="color: white;">Update</button>
                         </a>
                                     </td>
