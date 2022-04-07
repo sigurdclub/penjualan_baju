@@ -1,7 +1,7 @@
 <?php
     include_once '../../function.php';
     $harga=$_GET["harga"];
-    $buah=$_GET["buah"];
+    $buah=$_GET["baju"];
     if(isset($_POST["pesan"]) ){
         
         if(pesan($_POST) >0 ){
@@ -47,7 +47,7 @@
     <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 12px;">
             <div class="container-fluid">
-            <a class="navbar-brand" href="../../guests.html">FansFruits</a>
+            <a class="navbar-brand" href="../../guests.php">FansFruits</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -76,11 +76,15 @@
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">Nama Pesanan</label>
-                            <input type="text" name="nama_pesanan" class="form-control" id="inputAddress" placeholder="" value="<?= $_GET["buah"]; ?>">
+                            <input type="text" name="nama_pesanan" class="form-control" id="inputAddress" placeholder="" value="<?= $_GET["baju"]; ?>">
                         </div>
                         <div class="col-12">
-                            <label for="inputAddress" class="form-label">Jumlah Pesanan (Kg)</label>
+                            <label for="inputAddress" class="form-label">Jumlah Pesanan (Lembar)</label>
                             <input type="number" name="jumlah_pesanan" class="form-control" id="inputAddress" placeholder="">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">Size</label>
+                            <input type="text" name="size" class="form-control" id="inputAddress" placeholder="">
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">Alamat</label>

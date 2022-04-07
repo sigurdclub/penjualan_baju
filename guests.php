@@ -55,15 +55,15 @@
         <div class="container-fluid">
             <div class="row" style="justify-content: space-around; margin-top: 2%;">
                 <?php
-                    $data = query("SELECT * FROM tb_product");
+                    $data = query("SELECT * FROM tb_produkbaju");
                 ?>
                 <?php foreach ($data as $row) : ?>
                     
                     <div class="card shadow" style="width: 18rem; border-radius: 12px; background-color: beige;" >
-                        <a href="./guests/pesanan/pesanan.php?harga=<?= $row["harga"] ; ?>&buah=<?=$row["nama_buah"];?> " style="color: black;">
+                        <a href="./guests/pesanan/pesanan.php?harga=<?= $row["harga"] ; ?>&baju=<?=$row["nama_baju"];?> " style="color: black;">
                             <img style="padding: 12px;" src="./img/<?= $row ["gambar"];?>" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <h3 class="card-title" style="font-weight: bold;"><?=$row["nama_buah"]?></h3>
+                            <h3 class="card-title" style="font-weight: bold;"><?=$row["nama_baju"]?></h3>
                             <h5 class="card-text">Rp. <?=$row["harga"]?> </h5>
                             <p style="font-style: italic; color: rgba(0, 0, 0, 0.623);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                             </div>

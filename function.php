@@ -26,14 +26,6 @@ function upload(){
   $error = $_FILES['gambar']['error'];
   $tmp_file =$_FILES['gambar']['tmp_name'];
 
-  // ketika tdk ada gambar dipilih
-  // if($error == 4){
-  //   echo "<script>
-  //           alert('Pilih Gambar Terlebih Dahulu!');
-  //         </script>";
-  //   return false;
-  // }
-
   $ext=pathinfo($nama_file,PATHINFO_EXTENSION);
   $nama_file_baru = uniqid().'.'.$ext;
   //cek tipe file
@@ -126,13 +118,15 @@ function pesan($data){
 
   $tanggal=date('Y/m/d H:i:s');
   $harga=$_GET["harga"];
-  $buah=$_GET["buah"];
+  $baju=$_GET["baju"];
   $nama     = htmlspecialchars( $data["nama_pemesan"] );
   $jumlah  = htmlspecialchars( $data["jumlah_pesanan"] );
+  $size  = htmlspecialchars( $data["size"] );
   $alamat  = htmlspecialchars( $data["alamat"] );
+
   $total=$jumlah*$harga;
   // var_dump($total);die;
-  $query = "INSERT INTO orderan VALUES ('', '$nama', '$alamat', '$buah', '$jumlah', '$total','$tanggal')";
+  $query = "INSERT INTO orderan VALUES ('', '$nama', '$baju', '$size', '$jumlah', '$total', '$alamat', '$tanggal')";
   // var_dump($query);die;
   mysqli_query($conn, $query)or die(mysqli_error($conn));
 

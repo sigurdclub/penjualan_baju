@@ -166,6 +166,7 @@
                             <th scope="col">Tanggal</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Nama Baju</th>
+                            <th scope="col">Size Baju</th>
                             <th scope="col">Jumlah (lembar)</th>
                             <th scope="col">Alamat</th>
                             <th scope="col">Total Harga</th>

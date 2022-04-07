@@ -38,7 +38,7 @@ if(isset($_POST["submit"])){
     <div class="row" >
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 12px;">
             <div class="container-fluid">
-            <a class="navbar-brand" href="../../guests.html">FansFruits</a>
+            <a class="navbar-brand" href="../../guests.php">FansFruits</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -61,13 +61,14 @@ if(isset($_POST["submit"])){
                 <div>
                     <form class="row g-3" method="POST">
                         <?php
-                            $data=query("SELECT * FROM tb_pesanan");
+                            $data=query("SELECT * FROM orderan");
                             foreach ($data as $row) {
                                 $row["nama"];
-                                $row["nama_buah"];
+                                $row["nama_baju"];
                                 $row["jumlah"];
+                                $row["size"];
                                 $row["alamat"];
-                                $row["total_harga"];
+                                $row["total"];
                             }
                         ?>
                         
@@ -77,11 +78,15 @@ if(isset($_POST["submit"])){
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">Nama Pesanan</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="" value="<?=$row["nama_buah"]?>">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="" value="<?=$row["nama_baju"]?>">
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">Jumlah Pesanan</label>
                             <input type="number" class="form-control" id="inputAddress" placeholder=""  value="<?=$row["jumlah"]?>">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">Size Baju</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder=""  value="<?=$row["size"]?>">
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">Alamat</label>
@@ -89,7 +94,7 @@ if(isset($_POST["submit"])){
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">Total Harga</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="" value="<?=$row["total_harga"]?>">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="" value="<?=$row["total"]?>">
                         </div>
                         
                         </div>
