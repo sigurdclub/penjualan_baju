@@ -78,7 +78,7 @@ function update($data){
   $harga=mysqli_real_escape_string($conn, $data["harga"]);
   $stok=mysqli_real_escape_string($conn, $data["stok"]);
   $gambar_lama=mysqli_real_escape_string($conn, $data["gambar_lama"]);
-  
+  // var_dump($gambar_lama);die;
   $gambar = upload();
 
   if(!$gambar){
@@ -89,7 +89,7 @@ function update($data){
 
     }
   }
-  $query="UPDATE tb_product SET nama_baju='$baju', size='$size', harga='$harga', stok='$stok', gambar='$gambar' 
+  $query="UPDATE tb_produkbaju SET nama_baju='$baju', size='$size', harga='$harga', stok='$stok', gambar='$gambar' 
                             WHERE id=$id ";
   
   mysqli_query($conn,$query) or die(mysqli_error($conn));

@@ -1,17 +1,28 @@
 <?php
 include_once "../function.php";
+$id = $_GET["id"];
 
-if(isset($_POST["tambah"])){
-  if(tambahproduct($_POST)){
+$data=query("SELECT * FROM tb_produkbaju WHERE id='$id' ");
+  // var_dump($data);die;
+  foreach($data as $row){
+      $baju= $row["nama_baju"];
+      $size=$row["size"];  
+      $harga=$row["harga"];
+      $stok=$row["stok"];
+      $gambar=$row["gambar"];  
+  }
+
+if(isset($_POST["update"])){
+  if(update($_POST)){
     echo "
       <script>
-          alert('data berhasil ditambah!');
+          alert('data berhasil diubah!');
           document.location.href = 'products.php';
       </script>";
   }else{
     echo "
       <script>
-          alert('data gagal ditambah!');
+          alert('data gagal diubah!');
           document.location.href = 'products.php';
       </script>";
   }
@@ -176,7 +187,7 @@ if(isset($_POST["tambah"])){
       <div class="container-fluid">
         <div class="row ">
           <div class="col">
-            <h1 class="" style="text-align: center; margin-bottom: 2%;">Form Tambah </h1>
+            <h1 class="" style="text-align: center; margin-bottom: 2%;">Form Update </h1>
           </div>
         </div>
       </div>
@@ -191,27 +202,33 @@ if(isset($_POST["tambah"])){
             <div class="card-body">
             <form class="row g-3 form-products" action="" method="POST" enctype="multipart/form-data">
               <div class="col-12">
-                <label for="inputAddress" class="form-label" style="color: black;">Nama Buah</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Apple..." name="nama_buah" style="background-color: white; color: black;">
+                  <input type="hidden" class="form-control" id="inputAddress" placeholder="Apple..." name="id" value="<?php echo $id ?>">
               </div>
               <div class="col-12">
-                <label for="inputAddress2" class="form-label"  style="color: black;">Stok</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="1...." name="stok" style="background-color: white; color: black;">
+                <input type="hidden" class="form-control" id="inputAddress" placeholder="Apple..." name="gambar_lama" value="<?php echo $gambar ?>">
+              </div>
+              <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: black;">Nama Baju</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Apple..." name="nama_baju" style="background-color: white; color: black;" value="<?php echo $baju ?>">
+              </div>
+              <div class="col-12">
+                <label for="inputAddress2" class="form-label"  style="color: black;">Size</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="2" name="size" style="background-color: white; color: black;"value="<?php echo $size ?>">
               </div>
               <div class="col-12">
                 <label for="inputAddress2" class="form-label"  style="color: black;">Harga</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="15000" name="harga" style="background-color: white; color: black;">
+                <input type="text" class="form-control" id="inputAddress2" placeholder="15000" name="harga" style="background-color: white; color: black;" value="<?php echo $harga ?>">
               </div>
               <div class="col-12">
-                <label for="inputAddress2" class="form-label"  style="color: black;">Satuan</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="2" name="satuan" style="background-color: white; color: black;">
+                <label for="inputAddress2" class="form-label"  style="color: black;">Stok</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="1...." name="stok" style="background-color: white; color: black;"value="<?php echo $stok ?>">
               </div>
               <div class="col-12">
                 <label for="inputAddress2" class="form-label" style="color: black;" style="background-color: black;">Gambar</label>
                 <input type="file" class="form-control" id="inputAddress2" placeholder="" name="gambar" style="background-color: white; color: black;">
               </div>
               <div class="col-12" style="display: flex; justify-content: right;">
-                <button type="submit" class="btn btn-primary" name="tambah">Update</button>
+                <button type="submit" class="btn btn-primary" name="update">Update</button>
               </div>
             </form>
             </div>

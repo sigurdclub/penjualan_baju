@@ -188,13 +188,12 @@
                                     <td><?=$row["stok"];?></td>
                                     <td><img src="../img/<?= $row ['gambar'];?>" alt="" width="100px"></td>
                                     <td>
-                                    <a href="hapus.php?id=<?=$row["id"];?>">
-                                    <button type="button" class="btn btn-danger">Delete</button></a>
-                        <a href="update.php?id=<?=$row["id"];?>">
-                        <button type="button" class="btn btn-warning" style="color: white;">Update</button>
-                        </a>
+                                        <a href="hapus.php?id=<?=$row["id"];?>">
+                                            <button type="button" class="btn btn-danger">Delete</button></a>
+                                        <a href="update.php?id=<?=$row["id"];?>">
+                                            <button type="button" class="btn btn-warning" style="color: white;">Update<button>
+                                        </a>
                                     </td>
-                                    
                                     
                                 </tr>
                             

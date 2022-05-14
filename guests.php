@@ -1,4 +1,6 @@
-    <!DOCTYPE html>
+    <?php
+    include_once'function.php';
+    ?>    <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -98,30 +100,7 @@
                     </a>
                 </div> -->
             </div>
-        <!-- content -->
-                <div style="text-align: center;">
-                    <h4>New Arrivals For You</h4>
-                </div>
-
-                <div class="row" >
-                <div class="card" style="width: 100%;background-color: unset; border: unset;" >
-                    <div class="card-body" style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-                    <a href="./guests/pesanan/pesanan.php" style="color: black;">
-                        <div class="card" style="width: 18rem; background-color: #F7E9D7; margin-top: 5%; border-radius: 30px;">
-                            <div class="card-body" >
-                                <img src="assets/images/baju.png" class="card-img-top" alt="...">
-                                <div>
-                                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 22px; text-align: center; margin-bottom:unset;">T-shirt Yellow Jackass</p>
-                                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 22px; text-align: center; margin-bottom: unset;">Rp.250,000</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </a>
-                    </div>
-                </div>
-                </div>
-        </div>
+        <!--  -->
             
         
 

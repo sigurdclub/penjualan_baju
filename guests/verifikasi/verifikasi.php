@@ -32,21 +32,13 @@ if(isset($_POST["submit"])){
     
     <!-- Style CSS -->
     <link rel="stylesheet" href="../../footer/css/style.css">
-
-    <style>
-            @font-face {
-        font-family: way;
-        src: url(../../assets/font/BlackWay.otf);
-
-    }
-        </style>
 </head>
 <body>
     <!-- navbar -->
     <div class="row" >
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 12px;">
             <div class="container-fluid">
-            <a class="navbar-brand" href="../../guests.php">FansFruits</a>
+            <a class="navbar-brand" href="../../guests.html">FansFruits</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -55,16 +47,16 @@ if(isset($_POST["submit"])){
                 
                 <a class="nav-link" href="#">Instagram</a>
                 <a class="nav-link" href="#">Facebook</a>
-    <div class="row" style="padding: 12px;" >
-                <div style="text-align: center;">
-                    <h3 style="font-family:way; font-size: 50px; color: black;">T-ShirtWeekend</h3>
 
                 </div>
             </div>
+            </div>
+        </nav>
+    </div>
 
     <!-- Form pemesanan  -->
     <div class="row" style="justify-content: center; margin-top: 2%;">
-        <div class="card" style="width: 50%;  background-color: #F7E9D7;">
+        <div class="card" style="width: 50%;">
             <div class="card-body">
                 <div>
                     <form class="row g-3" method="POST">
@@ -93,7 +85,7 @@ if(isset($_POST["submit"])){
                             <input type="number" class="form-control" id="inputAddress" placeholder=""  value="<?=$row["jumlah"]?>">
                         </div>
                         <div class="col-12">
-                            <label for="inputAddress" class="form-label">Size Baju</label>
+                            <label for="inputAddress" class="form-label">Size</label>
                             <input type="text" class="form-control" id="inputAddress" placeholder=""  value="<?=$row["size"]?>">
                         </div>
                         <div class="col-12">
